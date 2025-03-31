@@ -1,0 +1,32 @@
+.feedback {
+    padding: 60px 15px;
+    background-color: $grayColor;
+    &__title {
+        @include styleTitle;
+        color: $darkColorText;
+        margin-bottom: 40px;
+    }
+    &__form {
+        width: 100%;
+        &-label {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-input {
+            width: 40%;
+            height: 50px;
+            border-radius: 12px;
+            padding: 10px 15px;
+            border: none;
+            &:focus {
+                outline: 1px solid $blueColor;
+            }
+        }
+        &-btn {
+            @include styleBtn;
+            width: 45%;
+            border-radius: 12px;
+        }
+    }
+}

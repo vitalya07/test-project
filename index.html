@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>test project</title>
+</head>
+<body>
+    <div class="body__container">
+        <div class="popup exit">
+            <div class="popup__dialog">
+                <div class="popup__content">
+                    <div class="popup__content-head">
+                        <h2 class="popup__tcontent-title">Оставьте заявку для заказа</h2>
+                        <div class="popup__content-close"></div>                        
+                    </div>                 
+                    <form class="popup__form">
+                        <label class="popup__form-label">
+                            <input type="name" name="your-name" id="popup-name" class="popup__form-input" placeholder="Ваше имя">
+                        </label>
+                        <label class="popup__form-label">
+                            <input type="phone" name="your-phone" id="popup-phone" class="popup__form-input" placeholder="Ваш телефон">
+                        </label>
+                        <label class="popup__form-label">
+                            <input type="checkbox" name="checkbox" id="popup-checkbox" class="popup__form-checkbox">
+                            Нажимая кнопку отправить вы сошлашаетесь с <a href="#">Политикой конфендециальности</a>
+                        </label>
+                        <button class="popup__form-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal__succes">
+            <div class="modal__dialog">
+                <div class="modal__content">
+                    <h2 class="modal__content-title">Ваши данные успешно отправлены!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal__error">
+            <div class="modal__dialog">
+                <div class="modal__content">
+                    <h2 class="modal__content-title">Ошибочка</h2>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a href="#" class="header__logo">
+                        <img src="icon/logo.svg" alt="logo">
+                    </a>
+                    <nav class="header__menu">
+                        <ul class="header__menu-list">
+                            <li class="header__menu-list--item"><a href="#" class="header__menu-list--link">Главная</a></li>
+                            <li class="header__menu-list--item"><a href="#" class="header__menu-list--link">О нас</a></li>
+                            <li class="header__menu-list--item"><a href="#" class="header__menu-list--link">Наша продукция</a></li>
+                            <li class="header__menu-list--item"><a href="#" class="header__menu-list--link">Связаться с нами</a></li>
+                            <li class="header__menu-list--item"><a href="#" class="header__menu-list--link">Адрес</a></li>
+                        </ul>
+                    </nav>
+                    <button data-popup class="header__btn">Оставить заявку</button>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <article class="product">
+                <div class="container">
+                    <div class="product__wrapper">
+                        <div class="product__item">
+                            <div class="product__item-img">
+                                <img src="img/capuchino.webp" alt="kofe">
+                            </div>
+                            <h2 class="product__item-title">
+                                Капучино
+                            </h2>
+                            <div class="product__item-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!</div>
+                            <button data-popup class="product__item-btn">Заказать</button>
+                        </div>
+                        <div class="product__item">
+                            <div class="product__item-img">
+                                <img src="img/americano.webp" alt="kofe">
+                            </div>
+                            <h2 class="product__item-title">
+                                Американо
+                            </h2>
+                            <div class="product__item-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!</div>
+                            <button data-popup class="product__item-btn">Заказать</button>
+                        </div>
+                        <div class="product__item">
+                            <div class="product__item-img">
+                                <img src="img/expresso.webp" alt="kofe">
+                            </div>
+                            <h2 class="product__item-title">
+                                Экспрессо
+                            </h2>
+                            <div class="product__item-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!</div>
+                            <button data-popup class="product__item-btn">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="feedback">
+                <div class="container">
+                    <h2 class="feedback__title">остались вопросы, оставьте заявку и наш менеджер свяжется с вами!</h2>
+                    <form class="feedback__form">
+                        <label class="feedback__form-label">
+                            <input type="name" name="your-name" id="name" placeholder="Ваше имя" class="feedback__form-input">
+                        </label>
+                        <label class="feedback__form-label">
+                            <input type="name" name="your-phone" id="phone" placeholder="Ваш телефон" class="feedback__form-input">
+                        </label>
+                        <label class="feedback__form-label">
+                            <input type="checkbox" name="your-checkbox" id="checkbox" class="feedback__form-checkbox">
+                            Нажиая кнопку оставить заявку вы соглашаетесь с <a href="#">Политикой конфендециальности</a>
+                        </label>
+                        <button class="feedback__form-btn">Оставить заявку</button>
+                    </form>
+                </div>
+            </article>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

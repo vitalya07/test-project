@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.open {
+    visibility: visible;
+    opacity: 1;
+    .popup__dialog {
+        transform: scale(1);
+    }
+}
+.exit {
+    visibility: hidden;
+    opacity: 0;
+    .popup__dialog {
+        transform: scale(0);
+    }
+}

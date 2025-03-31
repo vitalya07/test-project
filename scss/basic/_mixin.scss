@@ -1,0 +1,41 @@
+@mixin wrapperCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin wrapperSpaceBetveen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin styleDescr {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+}
+@mixin styleSubtitle {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+}
+@mixin styleTitle {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+}
+@mixin styleBtn {
+    width: 100%;
+    height: 50px;
+    background-color: $orangeColor;
+    @include wrapperCenter;
+    @include styleSubtitle;
+    color: $whiteColorText;
+    cursor: pointer;
+    transition: all .4s ease;
+    &:focus {
+        outline: 1px solid $orangeColor;
+    }
+    &:hover {
+        background-color: $orangeColor2;
+    }
+}
