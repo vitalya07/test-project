@@ -1,7 +1,8 @@
 'use strict'
 document.addEventListener('DOMContentLoaded', ()=> {
     const popup = document.querySelector('.popup');
-    const popupOpenBtn = document.querySelectorAll('[data-popup]');
+    const popupOpenBtn = document.querySelector('[data-popup]');
+    const productWrapper = document.querySelector('.product__wrapper');
 
     function openPopupWindow() {
         popup.classList.add('open');
@@ -14,11 +15,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
         popup.classList.remove('open');
         document.body.style.overflow = '';
     }
-    popupOpenBtn.forEach(btn => {
-        btn.addEventListener('click', ()=> {
-            openPopupWindow();
-        })
+    popupOpenBtn.addEventListener('click', ()=> {
+        openPopupWindow();
     });
+    productWrapper.addEventListener('click', (e)=> {
+        if(e.target.classList.contains('product__item-btn')) {
+            openPopupWindow();
+        }
+    })
     popup.addEventListener('click', (e)=> {
         const target = e.target;
         if(popup == target || target.classList.contains('popup__content-close')) {
@@ -70,5 +74,54 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 form.reset();
             })
         })
+    };
+    //Классы
+    class cofeCart {
+        constructor(src, alt, title, descr, btn, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.btn = btn;
+            this.parent = document.querySelector(parentSelector)
+        }
+        render() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="product__item">
+                    <div class="product__item-img">
+                        <img src=${this.src} alt=${this.alt}>
+                    </div>
+                    <h2 class="product__item-title">${this.title}</h2>
+                    <div class="product__item-descr">${this.descr}</div>
+                    <button data-popup class="product__item-btn">${this.btn}</button>
+                </div>
+            `;
+            this.parent.append(element);
+        }
     }
+    new cofeCart(
+        "img/capuchino.webp",
+        "kofe",
+        "Капучино",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!",
+        "Заказать",
+        ".container .product__wrapper"
+    ).render();
+    new cofeCart(
+        "img/americano.webp",
+        "kofe",
+        "Американо",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!",
+        "Заказать",
+        ".container .product__wrapper"
+    ).render();
+    new cofeCart(
+        "img/expresso.webp",
+        "kofe",
+        "Экспрессо",
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio, modi reiciendis accusantium velit commodi quis laboriosam laudantium praesentium sequi!",
+        "Заказать",
+        ".container .product__wrapper"
+    ).render();
 })
